@@ -139,7 +139,7 @@ h2, h3, h4 {
 }
 #sliderhead .text-det h4:before{
   content:"";
-  border: solid #ffe500 1px;
+  border: solid #29b6f6 1px;
   display:block;
   opacity:.3;
   width:50px;
@@ -1107,7 +1107,7 @@ h2, h3, h4 {
 }
 #blogsec {
     padding:40px 0px 90px;
-    background: #90A4AE;
+    background: #182a3a;
 }
 #blogsec .container.news-item{
     padding:0px;

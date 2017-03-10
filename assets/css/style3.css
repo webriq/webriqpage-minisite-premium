@@ -91,13 +91,14 @@
 	margin-top:40px;
 }
 #services2 .col-md-3:hover img{
-	border: solid #a1dcf7 1px;
+	border: solid #181818 1px;
+	background: #29b6f6;
 }
 #services2 .col-md-3 img{
-	border: solid 1px #ffffff;
+	border: solid 2px #29b6f6;
 	padding:30px 25px;
 	border-radius:50%;
-	background: #29b6f6;
+	background: #181818;
 }
 #services2 .col-md-3 .detservc h4{
 	font-size:16px; !important
