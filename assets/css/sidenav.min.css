@@ -54,24 +54,24 @@
 }
 .social-sidebar-topright li:nth-child(3) a{
     padding:12px 14px;
-    background:#dd4b39;
+    background: #dd4b39;
 }
-.credentials_nav a{     
+.credentials_nav a{
     border-radius:50%;
-    color:#fff;    
+    color: #fff;
     margin-left:6px;
 }
-.credentials_nav a:hover{ 
+.credentials_nav a:hover{
     padding:12px 20px;
     border-radius:50%;
-    color:#222;
+    color: #29b6f6;
     background:#fff;
 }
 .resrv {
     padding:35px 10px 0px;
     font-size: 14px;
     font-weight: bold;
-    color: #FF9800 !important;
+    color: #29b6f6 !important;
 }
 .logonav {
     padding: 20px 55px 0px;
@@ -109,7 +109,7 @@
     line-height:1em;
 }
 .sidenav-menu li a:hover{
-    color: #FF9800  !important;
+    color: #29b6f6  !important;
     text-decoration:none;
 }
 .sidenav-no-scroll #sliderhead {

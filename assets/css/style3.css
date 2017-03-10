@@ -4,7 +4,7 @@
 
 .containerheader.shrink .social-header-topright li a{
 	color:#fff;
-	border: #FFC400 solid 2px;
+	border: #ffffff solid 2px;
 }	
 .containerheader.shrink  .btnrigt {
 	padding:12px 0px 0px;
@@ -91,13 +91,13 @@
 	margin-top:40px;
 }
 #services2 .col-md-3:hover img{
-	border:solid #fff 1px;
+	border: solid #a1dcf7 1px;
 }
 #services2 .col-md-3 img{
-	border: solid 1px #3a3a3a;
+	border: solid 1px #ffffff;
 	padding:30px 25px;
 	border-radius:50%;
-	background: #ffc837;
+	background: #29b6f6;
 }
 #services2 .col-md-3 .detservc h4{
 	font-size:16px; !important
@@ -270,7 +270,7 @@
 }
 #coursesoffer .enqr a:hover{
 	background: rgba(255, 255, 255, 0.2);
-	color: #fff;
+	color: #29b6f6;
 	text-decoration:none;
 }
 #recrtrs-bg .detcours2 h4{
@@ -289,8 +289,8 @@
 #recrtrs-bg  .enqr a{
 	padding:10px 40px;
 	border-radius:30px;
-	color: #ffeb3b;
-	border: solid 1px #ffeb3b;
+	color: #29b6f6;
+	border: solid 1px #29b6f6;
 }
 #recrtrs-bg .det {
 	padding:10px 240px;
@@ -303,7 +303,7 @@
 .bloglayout .social-header-topright li a {
     list-style: none;
     display: inline-block;
-    border: solid 2px #FFC400;
+    border: solid 2px #29b6f6;
     border-radius: 50%;
     color: #fff;
     font-size: 22px;
@@ -378,7 +378,7 @@
     height: 400px;
 }
 .closestat {
-	color: #ffeb3b !important;
+	color: #29b6f6 !important;
 	margin-left:40px !important;
 	text-transform:uppercase !important;
 }
