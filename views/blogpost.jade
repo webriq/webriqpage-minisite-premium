@@ -1,0 +1,37 @@
+extends general-blog
+
+block content
+  #list-blog
+    .container
+      #bodyblog
+        a.example-image-link(href=entry.banner , data-lightbox='example-set', data-title=entry.leadtag)
+          img.example-image(src=entry.banner)
+        p.inner-blg-shrtdesc= entry.shortdesc
+        h6
+          i.fa.fa-tags(aria-hidden='true')
+          !=entry.leadtag
+        div.addthis_inline_share_toolbox        
+        div.blog-body-inner
+          != entry.body
+        div#disqus_thread
+
+      #div.relatedblog.text-center
+        h4.related-title Related Blog
+        each relblog in blog.orderBy('desc').slice(0,3)
+            div.col-md-4.text-center
+              .news-items
+                div.lead-sec
+                  .lead-image
+                    img.img-responsive(src=relblog.thumbnail)
+
+                div.blog-det 
+                  h3.blog-title
+                    a(href=relblog.permalink)= relblog.title 
+                  .published
+                    i(class="fa fa-clock-o", aria-hidden="true")
+                    date= dateFormat(relblog.date, 'dddd, LL')
+                  .short-desc
+                    p= relblog.shortdesc
+                    p.read-more
+                      a(href=relblog.permalink)
+                        | Read More →

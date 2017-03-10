@@ -1,3 +1,4 @@
+fs           = require 'fs'
 axis         = require 'axis'
 rupture      = require 'rupture'
 autoprefixer = require 'autoprefixer-stylus'
@@ -7,7 +8,13 @@ records      = require 'roots-records'
 collections  = require 'roots-collections'
 excerpt      = require 'html-excerpt'
 moment       = require 'moment'
-
+cleanUrls    = require 'clean-urls'
+roots_config = require 'roots-config'
+SitemapGenerator = require 'sitemap-generator'
+sortObj = require 'sort-object'
+sortBy = require 'sort-by'
+path = require 'path'
+roots_rss_generator = require 'webriq-roots-rss-generator'
 
 
 
@@ -20,30 +27,20 @@ module.exports =
     postExcerpt: (html, length, ellipsis) ->
       excerpt.text(html, length || 100, ellipsis || '...')
     dateFormat: (date, format) ->
-      moment(date).format('ll')
+      moment(date).format(format)
 
 
   extensions: [
     records(
-      characters: { file: "data/characters.json" }
+      menu: { file: "data/menu.json" }
       site: { file: "data/site.json" }
-      slider: { file: "data/slider.json" }
-      news: { file: "data/news.json" }
-      client: { file: "data/client.json" }
-      partners: { file: "data/partners.json" }
-      footer: { file: "data/footer.json" }
-      sidebar: { file: "data/sidebar.json" }
       files: { file: "data/files.json" }
-
     ),
-    collections(folder: 'services', layout: 'post'),
-    collections(folder: 'featuredwork', layout: 'post'),
-    collections(folder: 'posts', layout: 'post'),
-    collections(folder: 'news', layout: 'post'),
+    collections(folder: 'blog', layout: 'blogpost'),
+    collections(folder: 'page', layout: 'post'),
     js_pipeline(files: 'assets/js/*.coffee'),
     css_pipeline(files: 'assets/css/*.styl')
   ]
-
 
   stylus:
     use: [axis(), rupture(), autoprefixer()]

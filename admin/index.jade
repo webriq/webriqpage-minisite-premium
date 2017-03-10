@@ -3,10 +3,11 @@ html
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
     title Content Manager
 
-    link(rel="icon", href= records.site.sitedata[0].icon, type="image/png")
-    link(rel="shortcut icon", href= records.site.sitedata[0].icon, type="img/x-icon")
+    link(rel="icon", href= records.site.sitedata[0].icon, type="image/*")
+    link(rel="shortcut icon", href= records.site.sitedata[0].icon, type="img/*")
 
     link(rel="stylesheet", href="//cms.webriq.com/assets/cms.css")
 
@@ -14,39 +15,70 @@ html
 
 
     script!= "CMS_ENV = \"" + (process.env.CMS_ENV || "development") + "\";"
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js")
 
     base(href="/admin/")
   body
 
+
+
+    script(type="text/x-handlebars" data-template-name='cms/preview/pages').
+      <div id="main-wrapper">
+        <div class="main-container">
+          <!--Content-->
+          <article class="box post">
+            {{#if entry.banner }}
+            {{cms-preview field='banner'}}
+            {{/if}}
+            <header>
+              <h2>{{ entry.title }}</h2>
+            </header>
+            {{cms-preview field='body'}}
+          </article>
+        </div>
+      </div>
+
+    script(type="text/x-handlebars" data-template-name='cms/preview/result').
+          <div id="main-wrapper">
+          <div class="main-container">
+          <h1>Menu Items</h1>
+          <hr>
+          <ul class="menu-preview">
+          {{#cms-preview field="result" as |results| }}
+            <li><a href="{{results.url}}">{{results.item}}</a></li>
+          {{/cms-preview}}
+          </ul>
+          </div>
+          </div>
+
+
     script(type="text/x-handlebars" data-template-name='cms/preview/sitedata').
       <div id="main-wrapper">
-        <div class="container">
-
+        <div class="main-container">
+            <h1>Website Information</h1>
+            <hr>
           {{#cms-preview field="sitedata" as |sitedatas| }}
-            <section class="box">
-              <h1>Site Information</h1>
-              <hr>
-              <h5>Website Name:</h5>
-              <p>{{sitedatas.sitename}}</p>
-              <h5>Favicon icon:</h5>
-              <p>{{cms-preview field="icon" from=sitedatas}}</p>
-              <h5>Site Logo:</h5>
-              <p>{{cms-preview field="logo" from=sitedatas}}</p>
-              <h5>Meta Description:</h5>
-              <p>{{sitedatas.metadesc}}</p>
-              <h5>Meta Author:</h5>
-              <p>{{sitedatas.metauthor}}</p>
-              <h5>Meta Keywords:</h5>
-              <p>{{sitedatas.metauthor}}</p>
-              <h5>Copyright Text:</h5>
-              <p>{{cms-preview field="footer" from=sitedatas}}</p>
-            </section>
+            <h4>Favicon</h4>
+            <p>{{{cms-preview field="icon" from=sitedatas}}}</p>
+            <h4>Logo</h4>
+            <p>{{cms-preview field="logo" from=sitedatas}}</p>
+            <h4>Website Name</h4>
+            <p>{{sitedatas.sitename}}</p>
+            <h4>Meta Description</h4>
+            <p>{{sitedatas.sitename}}</p>
+            <h4>Meta Author</h4>
+            <p>{{sitedatas.metauthor}}</p>
+            <h4>Meta Keywords</h4>
+            <p>{{sitedatas.metakeyword}}</p>
+            <h4>Copyright Text</h4>
+            <p>{{sitedatas.footer}}</p>
+
           {{/cms-preview}}
         </div>
       </div>
 
 
+
+
     script(src="//cms.webriq.com/assets/vendor.js")
     script(src="//cms.webriq.com/assets/cms.js")
-

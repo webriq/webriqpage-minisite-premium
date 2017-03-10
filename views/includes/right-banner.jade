@@ -1,0 +1,15 @@
+#rightside-more-blog
+  div.more-ttle-head
+      h3.ttle-post
+          | More Blogs
+
+  each moreblog in blog.orderBy('desc').slice(0,5)
+    div.moreblog
+      .row
+        div.col-md-5.left-more
+          .lead-image
+            img.img-responsive(src=moreblog.banner)
+
+        div.col-md-7.right-more
+          h3.moreblog-title
+            a(href=moreblog.permalink)= moreblog.title

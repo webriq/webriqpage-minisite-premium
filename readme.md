@@ -13,8 +13,8 @@ This is a simple example of how to integrate Webriq CMS with a roots based site.
 Then:
 
 ```bash
-git clone https://github.com/webriq/business-static-template
-cd business-static-template
+git clone https://github.com/webriq/starter-template
+cd starter-template
 netlify-git-api users add
 netlify-git-api serve
 ```

@@ -6,33 +6,9 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://businesstpl.netlify.com/</loc>
+  <loc>http://demotpl.netlify.com/</loc>
 </url>
 <url>
-  <loc>http://businesstpl.netlify.com/contact-us</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/services/our-services</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/featuredwork/featured-work</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/news/2016-04-03-parsing-an-xml-document</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/news/2016-04-04-working-with-json</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/news/2016-04-05-materialize</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/news/2016-04-06-get-your-rating-widget-now</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/news-list</loc>
-</url>
-<url>
-  <loc>http://businesstpl.netlify.com/about-us</loc>
+  <loc>http://demotpl.netlify.com/page/about-us</loc>
 </url>
 </urlset>

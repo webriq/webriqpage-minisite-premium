@@ -11,6 +11,10 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+/*	.ember-view .cms.cms-list-controls .cms.cms-new-link{
+		display:none;
+	}
+*/
 
 	/**Menu Icons**/
 
@@ -19,39 +23,43 @@
 	  content: "\f013" !important;}
 
 	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(2) a::before {
-	  content: "\f03e"; }
+	  content: "\f0c9"; }
 
 	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(3) a::before  {
-	  content: "\f247"; }
+	  content: "\f0f6"; }
 
 	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(4) a::before  {
-	  content: "\f24d"; }
-	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(5) a::before  {
-	  content: "\f1ea"; }
-
-	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(6) a::before  {
-	  content: "\f044"; }
-
-	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(7) a::before  {
-	  content: "\f0c0"; }
-
-	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(8) a::before  {
 	  content: "\f114"; }
 
+	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(5) a::before  {
+	  content: "\f24d"; }
 
+	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(6) a::before  {
+	  content: "\f1ea"; }
 
+	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(7) a::before  {
+	  content: "\f044"; }
+
+	#left_col-2 ul.cms.cms-nav-menu li:nth-of-type(8) a::before  {
+	  content: "\f0c0"; }
 
 	/**Menu Icons End Here**/
 
-	#main-wrapper .container {
+	.main-container {
     width: auto;
     max-width: 1200px;
     padding:20px;
-	}
+}
   body.ember-application .cms-list-entry,
   body.ember-application .cms-preview-pane {
     background: #fff;
   }
+
+	body.ember-application .cms-text{
+	  font: 16px/1.75em 'Open sans', Arial, Sans serif;
+	  font-weight: 400;
+	}
+
 		body.is-loading * {
 			-moz-transition: none !important;
 			-webkit-transition: none !important;
@@ -67,7 +75,7 @@
 
 	body,input,textarea,select
 	{
-		font-family: 'Source Sans Pro';
+		font-family: 'Open sans';
 		font-weight: 300;
 		color: #5d5d5d;
 	}
@@ -320,9 +328,8 @@
 
 		.box
 		{
-
-			width:100%;
-
+			background: #ffffff;
+			border-bottom: solid 1px #ccc;
 		}
 
 			.box .image.featured
@@ -418,7 +425,7 @@
 			.image img
 			{
 				display: block;
-				width: 100%;
+				margin: auto;
 			}
 
 			.image.centered

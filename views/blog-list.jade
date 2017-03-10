@@ -1,0 +1,33 @@
+extends general
+
+block content
+  #list-blog-all    
+    each allblogs in blog.orderBy('date', 'desc').slice(0,8)
+      .news-items
+        div.lead-sec
+          .lead-image
+            img.img-responsive(src=allblogs.banner)
+          h5.lead-tag= allblogs.leadtag
+
+        div.blog-det
+          h3.blog-title
+            a(href=allblogs.permalink)= allblogs.title
+          .published
+            p.info
+              != "<i class='fa fa-bookmark-o'></i> <i>By</i> <b>" + allblogs.author + "</b> | <i class='fa fa-clock-o'></i> Created on <b> " + dateFormat(allblogs.date, 'LL') + "</b>"
+          .short-desc
+            p= allblogs.shortdesc
+            p.read-more
+              a(href=allblogs.permalink)
+                | Read More
+                i.fa.fa-long-arrow-right(aria-hidden='true')
+    nav
+      ul.pager
+        li.previous.disabled
+          a(href='#')
+            span(aria-hidden='true') ←
+            | Prev
+        li.next.disabled
+          a(href='#')
+            | Next
+            span(aria-hidden='true') →

@@ -1,0 +1,45 @@
+doctype html
+html
+
+  head
+    meta(charset='utf8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    //- uncomment if your site is responsive!
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    meta(name='description', content= records.site.sitedata[0].metadesc)
+    meta(name='author', content= records.site.sitedata[0].metauthor)
+    meta(name="keywords" content= records.site.sitedata[0].metakeyword)
+
+    title= records.site.sitedata[0].sitename
+
+    link(rel="icon", href= records.site.sitedata[0].icon, type="image/*")
+    link(rel="shortcut icon", href= records.site.sitedata[0].icon, type="img/*")
+    link(href='https://fonts.googleapis.com/css?family=Nunito:200,300,400', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Oswald', rel='stylesheet')
+    link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css', type='text/css')
+    link(type='text/css', rel='stylesheet', href='/css/webriq-bootstrap-material-ui.min.css', media='screen,projection')
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/hover.css')
+    link(rel='stylesheet', href='/css/lightbox.min.css')
+    link(rel='stylesheet', href='/css/sidenav.min.css') 
+    link(rel='stylesheet', href='/css/style2.css')
+    link(rel='stylesheet', href='/css/style3.css')
+
+    <!-- Custom CSS -->
+    
+    != css()
+
+    body#page-top.blogbody
+      div#main.main
+        include includes/header-listblog
+
+      div#list-allblog.main-container
+        div.container
+            div.col-md-8.left-list
+                block content
+            div.col-md-4.right-list.pull-right
+                include includes/right-banner
+
+      div.footer
+        include ./includes/footerblog

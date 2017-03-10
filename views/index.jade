@@ -1,197 +1,133 @@
 extends layout
 
-block append content
+block content
+   
+    div#health-and-safety
+      div#aboutdailmore.section
+          .container
+              .row
+                  .col-md-6.text-left.detabout_left
+                      div.imgtablet(style="display:none;")
+                        img(src="../img/hendry-about-img-circle.png")
+                      div.breaker
+                          h4 About Us
+                          h5.subttle-2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.                      
+                          p.dets
+                              | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          div.btnenqr
+                            a(href="mailto:mail@hendry-training.co.uk") ENQUIRE NOW!
+                  .col-md-6.text-center.detabout_img
+                      img(src="../img/about-right-img.jpg")
+
+    div#services2.section
+        .container
+            h3.titlesevces Web Services
+            p.subttleserv Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+            h4.coursesincld Lorem Ipsum is simply dummy
+            .row
+              .col-md-3.col-sm-6.col-xs-6.servc1
+                  img(src="../img/services-icon1.png")
+                  div.detservc
+                      h4  IOSH training 
+                        br
+                        | modules
+              .col-md-3.col-sm-6.col-xs-6.servc2.servhiddn
+                  img(src="../img/services-icon2.png")
+                  div.detservc
+                      h4 Security training
+                        br
+                        | courses
+              .col-md-3.col-sm-6.col-xs-6.servc3.servhiddn
+                  img(src="../img/services-icon3.png")
+                  div.detservc
+                      h4 Conflict
+                        br
+                        | Resolution
+              .col-md-3.col-sm-6.col-xs-6.servc4.servhiddn
+                  img(src="../img/services-icon4.png")
+                  div.detservc
+                      h4 Accredited 
+                        br
+                        | e-learning courses
+            div
+              p.trainingmore-serv.expand
+                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                br
+                br
+                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+     
+    div#coursesoffer.section
+      div.container-fluid
+        div.row
+          div.col-md-4.clsstrng
+            img(src='../img/courses-1.png')
+            .detcours
+              img(src="../img/training.png")
+              h4 Classroom training
+              p.det
+                | We provide one-day and up to four-day classroom based training courses to individuals and businesses...
+              p.enqr
+                a(href="mailto:loremipsum@buzzin.today") ENQUIRE NOW!
+          div.col-md-4.elearng
+            img(src='../img/courses-2.png')
+            .detcours
+              img(src="../img/e-learning.png")
+              h4 Accredited e-learning
+              p.det
+                | If you are unable to attend our classroom training courses, sign up for our array of e-learning courses...
+              p.enqr
+                a(href="mailto:loremipsum@buzzin.today") ENQUIRE NOW!
+          div.col-md-4.afftrang
+            img(src='../img/courses-3.jpg')
+            .detcours
+              img(src="../img/affordable-training.png")
+              h4 Affordable training
+              p.det
+                | Undertake industry approve training courses at affordable prices from our experienced trainers today!...
+              p.enqr
+                a(href="#map") CONTACT US!
+          div#recrtrs-bg.col-md-12.recrtrs
+            .detcours2
+              img(src="../img/customer-service.png")
+              h4 Our Offers
+              p.det
+                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+              p.enqr
+                a.hvr-ripple-out(href="#map") Talk To Us!
+
+    div#blogsec.section
+      div.container.text-center
+        h1.title-header Blog
+        h5.sub Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        hr
+        .container.news-item
+          each blogss in blog.orderBy('date', 'desc').slice(0, 3)
+            div.col-md-4.text-center 
+              .news-items          
+                div.lead-sec
+                  .lead-image
+                    img.img-responsive(src=blogss.thumbnail)
+                  h5.lead-tag= blogss.leadtag
+
+                div.blog-det 
+                  h3.blog-title
+                    a(href=blogss.permalink)= blogss.title
+                  .published
+                    i(class="fa fa-clock-o", aria-hidden="true")
+                    date= dateFormat(blogss.date, 'dddd, LL')
+                  .short-desc
+                    p= blogss.shortdesc
+                    p.read-more
+                      a(href=blogss.permalink)                         
+                        | Read More   
+                        i.fa.fa-long-arrow-right(aria-hidden='true')
 
 
-	section#service.main-section.scrollspy
-		.container
-			each service in services.sort('title')
-				h2= service.title
-				h6= service.shortdesc
+        div#more-blog.section
+          div.more-img
+            a.more-blog-btn.hvr-ripple-out(href="/blog-list.html")
+              img(src="img/blog/more-blog.png")
 
-				.row
-					.col-lg-4.col-sm-6.wow.fadeInLeft.delay-05s
-						//- .service-list
-						//- 	.service-list-col1
-						//- 		i(class= entry.icon)
-						//- 	.service-list-col2
-						//- 		h5= entry.subtitle
-						//- 		p= entry.tagline
-						.service-list
-							.service-list-col1
-								i.fa-paw
-							.service-list-col2
-								h5 branding & Identity
-								p Proin iaculis purus consequat sem digni ssim. Digni ssim porttitora .
-						.service-list
-							.service-list-col1
-								i.fa-gear
-							.service-list-col2
-								h5 web development
-								p Proin iaculis purus consequat sem digni ssim. Digni ssim porttitora .
-						.service-list
-							.service-list-col1
-								i.fa-apple
-							.service-list-col2
-								h5 mobile design
-								p
-									| Proin iaculis purus consequat digni sem digni ssim. Purus donec porttitora
-									| entum.
-						.service-list
-							.service-list-col1
-								i.fa-medkit
-							.service-list-col2
-								h5 24/7 Support
-								p Proin iaculis purus consequat sem digni ssim. Sem porttitora entum.
-
-						.clear
-						p.text-right
-							a(href=service.permalink, class="waves-effect waves-light grey darken-4 btn-large") Read More
-
-					figure.col-lg-8.col-sm-6.text-right.wow.fadeInUp.delay-02s
-						img(src= service.banner, alt='')
-
-	section.main-section.alabaster.scrollspy
-		.container
-			each work in featuredwork.sort('title')
-				.row
-					figure.col-lg-5.col-sm-4.wow.fadeInLeft
-						img(src= work.banner, alt='')
-					.col-lg-7.col-sm-8.featured-work
-						h2= work.title
-						p(class="padding-b")= work.shortdesc
-
-						.service-list
-							.service-list-col1
-								i.fa-magic
-							.service-list-col2
-								h5 magic of theme development
-								p Proin iaculis purus digni consequat sem digni ssim. Donec entum digni ssim.
-						.service-list
-							.service-list-col1
-								i.fa-gift
-							.service-list-col2
-								h5 neatly packaged
-								p Proin iaculis purus consequat sem digni ssim. Digni ssim porttitora .
-						.service-list
-							.service-list-col1
-								i.fa-dashboard
-							.service-list-col2
-								h5 SEO optimized
-								p
-									| Proin iaculis purus consequat digni sem digni ssim. Purus donec porttitora entum.
-						.clear
-						p.text-right.wow.fadeInRight.delay-07s
-							a(href= work.permalink, class="waves-effect waves-light grey darken-4 btn-large") Read More
-
-	section#client_outer.main-section.scrollspy
-			h2 Happy Clients
-			.client_area
-				.client_section.animated.fadeInUp.wow
-					.client_profile
-						.client_profile_pic
-							img(src= records.client.testi[0].image, alt='')
-						h3= records.client.testi[0].name
-						span= records.client.testi[0].work
-
-					.quote_section
-						.quote_arrow
-						p
-							b
-								img(src='../img/quote_sign_left.png', alt='')
-							p= records.client.testi[0].comment
-							small
-								img(src='../img/quote_sign_right.png', alt='')
-					.clear
-				.client_section.animated.fadeInDown.wow
-					.client_profile.flt
-						.client_profile_pic
-							img(src= records.client.testi[1].image, alt='')
-						h3= records.client.testi[1].name
-						span= records.client.testi[1].work
-					.quote_section.flt
-						.quote_arrow2
-						p
-							b
-								img(src='../img/quote_sign_left.png', alt='')
-							p= records.client.testi[1].comment
-							small
-								img(src='../img/quote_sign_right.png', alt='')
-					.clear
-	section#news.scrollspy
-		.container
-			h2.wow.fadeInUp.delay-0s Latest News
-			h6 Proin iaculis purus consequat sem cure digni ssim.
-			.row
-				div.lazy-wrapper.wow.fadeInUp.delay-0s
-					each newss in news.orderBy('date', 'asc').slice(0, 4)
-						.col-sm-4.lazyItem
-							.card
-								.card-image.waves-effect.waves-block.waves-light
-									img.activator(src= newss.banner)
-								.card-content
-									i.material-icons.right.activator more_vert
-									span.card-title.activator.grey-text.text-darken-4= newss.title
-									time(date= newss.date)= newss.date
-								.card-reveal
-									span.card-title.grey-text.text-darken-4= newss.title
-										i.material-icons.right close
-									time(date= newss.date)= newss.date
-									p= newss.shortdesc
-									p.read-more
-										a.btn.waves-effect.waves-light(href= newss.permalink) READ MORE
-				p.read-more.center
-					a.btn.waves-effect.waves-light.btn-large(href="/news-list.html") VIEW ALL NEWS
-				.clear
-	section#partners.scrollspy
-		.container.wow.fadeIn.delay-0s
-			h2  Our Partners
-			h6  We're distributing millions of dollars every week to campaigners around the world.<br> Whether you're raising 500 dollars or 5 million euros.
-			.row
-				.col-lg-12
-					ul#partner-list
-						- each partner in records.partners.data
-								li.wow.zoomIn
-									figure
-										a(href= partner.website)
-											img(alt='', src= partner.logo)
-
-
-	//- .row
-	//-   .12u
-	//-     section
-	//-       header.major
-	//-         h2 Recent Episodes
-	//-       div.row
-	//-         each post in posts.sort('date', 'asc')
-	//-           .6u
-	//-             section.box
-	//-               a.image.featured(href=post.permalink)
-	//-                 img(src= post.banner)
-	//-               header
-	//-                 h3= post.title
-	//-                 p= "Posted " + dateFormat(post.date, 'LL')
-	//-                 != postExcerpt(post.body, 250)
-	//-               footer
-	//-                 ul.actions
-	//-                   li
-	//-                     a.button.icon.fa-file-text(href= post.permalink) Continue Reading
-
-
-	//- .row
-	//-   .12u
-	//-     section
-	//-       header.major
-	//-         h2 Characters
-
-	//-       .row
-	//-         - each character in records.characters.data
-	//-           .4u
-	//-             .box
-	//-               span.image.featured
-	//-                 img(src=character.image)
-	//-               header
-	//-                 h3= character.name
-	//-                 p= character.description
-
-
+    section#maps
+      div#map 
