@@ -10,7 +10,7 @@ block content
         h6
           i.fa.fa-tags(aria-hidden='true')
           !=entry.leadtag
-        div.addthis_inline_share_toolbox        
+        div.addthis_inline_share_toolbox
         div.blog-body-inner
           != entry.body
         div#disqus_thread
@@ -22,11 +22,11 @@ block content
               .news-items
                 div.lead-sec
                   .lead-image
-                    img.img-responsive(src=relblog.thumbnail)
+                    img.img-responsive(src=relblog.mainimage)
 
-                div.blog-det 
+                div.blog-det
                   h3.blog-title
-                    a(href=relblog.permalink)= relblog.title 
+                    a(href=relblog.permalink)= relblog.title
                   .published
                     i(class="fa fa-clock-o", aria-hidden="true")
                     date= dateFormat(relblog.date, 'dddd, LL')

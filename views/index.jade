@@ -1,7 +1,7 @@
 extends layout
 
 block content
-   
+
     div#health-and-safety
       div#aboutdailmore.section
           .container
@@ -11,7 +11,7 @@ block content
                         img(src="../img/hendry-about-img-circle.png")
                       div.breaker
                           h4 About Us
-                          h5.subttle-2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.                      
+                          h5.subttle-2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                           p.dets
                               | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                           div.btnenqr
@@ -29,7 +29,7 @@ block content
               .col-md-3.col-sm-6.col-xs-6.servc1
                   img(src="../img/services-icon1.png")
                   div.detservc
-                      h4  IOSH training 
+                      h4  IOSH training
                         br
                         | modules
               .col-md-3.col-sm-6.col-xs-6.servc2.servhiddn
@@ -47,7 +47,7 @@ block content
               .col-md-3.col-sm-6.col-xs-6.servc4.servhiddn
                   img(src="../img/services-icon4.png")
                   div.detservc
-                      h4 Accredited 
+                      h4 Accredited
                         br
                         | e-learning courses
             div
@@ -56,7 +56,7 @@ block content
                 br
                 br
                 | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-     
+
     div#coursesoffer.section
       div.container-fluid
         div.row
@@ -103,14 +103,14 @@ block content
         hr
         .container.news-item
           each blogss in blog.orderBy('date', 'desc').slice(0, 3)
-            div.col-md-4.text-center 
-              .news-items          
+            div.col-md-4.text-center
+              .news-items
                 div.lead-sec
                   .lead-image
-                    img.img-responsive(src=blogss.thumbnail)
+                    img.img-responsive(src=blogss.mainimage)
                   h5.lead-tag= blogss.leadtag
 
-                div.blog-det 
+                div.blog-det
                   h3.blog-title
                     a(href=blogss.permalink)= blogss.title
                   .published
@@ -119,8 +119,8 @@ block content
                   .short-desc
                     p= blogss.shortdesc
                     p.read-more
-                      a(href=blogss.permalink)                         
-                        | Read More   
+                      a(href=blogss.permalink)
+                        | Read More
                         i.fa.fa-long-arrow-right(aria-hidden='true')
 
 
@@ -130,4 +130,4 @@ block content
               img(src="img/blog/more-blog.png")
 
     section#maps
-      div#map 
+      div#map

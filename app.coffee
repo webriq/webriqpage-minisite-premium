@@ -14,6 +14,7 @@ SitemapGenerator = require 'sitemap-generator'
 sortObj = require 'sort-object'
 sortBy = require 'sort-by'
 path = require 'path'
+lodash = require 'lodash'
 roots_rss_generator = require 'webriq-roots-rss-generator'
 
 
@@ -28,7 +29,10 @@ module.exports =
       excerpt.text(html, length || 100, ellipsis || '...')
     dateFormat: (date, format) ->
       moment(date).format(format)
-
+    sortByKey: (obj) ->
+      lodash.sortBy(obj, [ (o) ->
+          new Date(o.date)
+        ]).reverse()
 
   extensions: [
     records(

@@ -2,7 +2,7 @@
 title: Lorem ipsum
 author: Lorem ipsum
 leadtag: Blog
-thumbnail: /img/blog/lorem-ipsum.jpg
+mainimage: /img/blog/lorem-ipsum.jpg
 banner: /img/blog/featured/lorem.jpg
 shortdesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate   Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 updatedDate: 2017-03-09T11:54:44.267Z
