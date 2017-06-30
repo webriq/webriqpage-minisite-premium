@@ -17,7 +17,7 @@ block content
 
       #div.relatedblog.text-center
         h4.related-title Related Blog
-        each relblog in blog.orderBy('desc').slice(0,3)
+        each relblog in sortByKey(blog)
             div.col-md-4.text-center
               .news-items
                 div.lead-sec

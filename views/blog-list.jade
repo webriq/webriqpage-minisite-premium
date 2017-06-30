@@ -1,8 +1,8 @@
 extends general
 
 block content
-  #list-blog-all    
-    each allblogs in blog.orderBy('date', 'desc').slice(0,8)
+  #list-blog-all
+    each allblogs in sortByKey(blog)
       .news-items
         div.lead-sec
           .lead-image

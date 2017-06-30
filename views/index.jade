@@ -102,7 +102,7 @@ block content
         h5.sub Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         hr
         .container.news-item
-          each blogss in blog.orderBy('date', 'desc').slice(0, 3)
+          each blogss in sortByKey(blog)
             div.col-md-4.text-center
               .news-items
                 div.lead-sec

@@ -3,7 +3,7 @@
       h3.ttle-post
           | More Blogs
 
-  each moreblog in blog.orderBy('desc').slice(0,5)
+  each moreblog in sortByKey(blog)
     div.moreblog
       .row
         div.col-md-5.left-more
