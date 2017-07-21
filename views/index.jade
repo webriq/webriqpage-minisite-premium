@@ -2,132 +2,115 @@ extends layout
 
 block content
 
-    div#health-and-safety
-      div#aboutdailmore.section
-          .container
-              .row
-                  .col-md-6.text-left.detabout_left
-                      div.imgtablet(style="display:none;")
-                        img(src="../img/hendry-about-img-circle.png")
-                      div.breaker
-                          h4 About Us
-                          h5.subttle-2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                          p.dets
-                              | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                          div.btnenqr
-                            a(href="mailto:mail@hendry-training.co.uk") ENQUIRE NOW!
-                  .col-md-6.text-center.detabout_img
-                      img(src="../img/about-right-img.jpg")
+    if config.about != "hide"
+      div#health-and-safety
+        div#aboutdailmore.section
+            .container
+                .row
+                    .col-md-6.text-left.detabout_left
+                        div.imgtablet(style="display:none;")
+                          img(src="../img/hendry-about-img-circle.png")
+                        div.breaker
+                            h4 About Us
+                            h5.subttle-2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            p.dets
+                                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            div.btnenqr
+                              a(href="mailto:mail@hendry-training.co.uk") ENQUIRE NOW!
+                    .col-md-6.text-center.detabout_img
+                        img(src="../img/about-right-img.jpg")
 
-    div#services2.section
+    if config.services != "hide"
+      div#services2.section.services
         .container
-            h3.titlesevces Web Services
-            p.subttleserv Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            h1.title= records.site.sitedata[0].services_title
+            h5.subheading= records.site.sitedata[0].services_subheading
 
-            h4.coursesincld Lorem Ipsum is simply dummy
             .row
-              .col-md-3.col-sm-6.col-xs-6.servc1
-                  img(src="../img/services-icon1.png")
-                  div.detservc
-                      h4  IOSH training
-                        br
-                        | modules
-              .col-md-3.col-sm-6.col-xs-6.servc2.servhiddn
-                  img(src="../img/services-icon2.png")
-                  div.detservc
-                      h4 Security training
-                        br
-                        | courses
-              .col-md-3.col-sm-6.col-xs-6.servc3.servhiddn
-                  img(src="../img/services-icon3.png")
-                  div.detservc
-                      h4 Conflict
-                        br
-                        | Resolution
-              .col-md-3.col-sm-6.col-xs-6.servc4.servhiddn
-                  img(src="../img/services-icon4.png")
-                  div.detservc
-                      h4 Accredited
-                        br
-                        | e-learning courses
-            div
-              p.trainingmore-serv.expand
-                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                br
-                br
-                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+              each services in records.site.services
+                .col-md-3.col-sm-6.col-xs-6.servc1
+                  .entry
+                    .entry_thumbnail
+                      != services.icon
+                    .entry_title
+                      h5= services.title
+                    .entry_body
+                      p= services.body
 
-    div#coursesoffer.section
-      div.container-fluid
-        div.row
-          div.col-md-4.clsstrng
-            img(src='../img/courses-1.png')
-            .detcours
-              img(src="../img/training.png")
-              h4 Classroom training
-              p.det
-                | We provide one-day and up to four-day classroom based training courses to individuals and businesses...
-              p.enqr
-                a(href="mailto:loremipsum@buzzin.today") ENQUIRE NOW!
-          div.col-md-4.elearng
-            img(src='../img/courses-2.png')
-            .detcours
-              img(src="../img/e-learning.png")
-              h4 Accredited e-learning
-              p.det
-                | If you are unable to attend our classroom training courses, sign up for our array of e-learning courses...
-              p.enqr
-                a(href="mailto:loremipsum@buzzin.today") ENQUIRE NOW!
-          div.col-md-4.afftrang
-            img(src='../img/courses-3.jpg')
-            .detcours
-              img(src="../img/affordable-training.png")
-              h4 Affordable training
-              p.det
-                | Undertake industry approve training courses at affordable prices from our experienced trainers today!...
-              p.enqr
-                a(href="#map") CONTACT US!
-          div#recrtrs-bg.col-md-12.recrtrs
-            .detcours2
-              img(src="../img/customer-service.png")
-              h4 Our Offers
-              p.det
-                | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              p.enqr
-                a.hvr-ripple-out(href="#map") Talk To Us!
+    
+    if config.offers != "hide"
+      div#coursesoffer.section
+        div.container-fluid
+          div.row
+            div.col-md-4.clsstrng
+              img(src='../img/courses-1.png')
+              .detcours
+                img(src="../img/training.png")
+                h4 Classroom training
+                p.det
+                  | We provide one-day and up to four-day classroom based training courses to individuals and businesses...
+                p.enqr
+                  a(href="mailto:loremipsum@buzzin.today") ENQUIRE NOW!
+            div.col-md-4.elearng
+              img(src='../img/courses-2.png')
+              .detcours
+                img(src="../img/e-learning.png")
+                h4 Accredited e-learning
+                p.det
+                  | If you are unable to attend our classroom training courses, sign up for our array of e-learning courses...
+                p.enqr
+                  a(href="mailto:loremipsum@buzzin.today") ENQUIRE NOW!
+            div.col-md-4.afftrang
+              img(src='../img/courses-3.jpg')
+              .detcours
+                img(src="../img/affordable-training.png")
+                h4 Affordable training
+                p.det
+                  | Undertake industry approve training courses at affordable prices from our experienced trainers today!...
+                p.enqr
+                  a(href="#map") CONTACT US!
+            div#recrtrs-bg.col-md-12.recrtrs
+              .detcours2
+                img(src="../img/customer-service.png")
+                h4 Our Offers
+                p.det
+                  | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                p.enqr
+                  a.hvr-ripple-out(href="#map") Talk To Us!
 
-    div#blogsec.section
-      div.container.text-center
-        h1.title-header Blog
-        h5.sub Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        hr
-        .container.news-item
-          each blogss in sortByKey(blog)
-            div.col-md-4.text-center
-              .news-items
-                div.lead-sec
-                  .lead-image
-                    img.img-responsive(src=blogss.mainimage)
-                  h5.lead-tag= blogss.leadtag
+    if config.blog != "hide"
+      div#blogsec.section
+        div.container.text-center
+          h1.title-header Blog
+          h5.sub Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          hr
+          .container.news-item
+            each blogss in sortByKey(blog)
+              div.col-md-4.text-center
+                .news-items
+                  div.lead-sec
+                    .lead-image
+                      img.img-responsive(src=blogss.mainimage)
+                    h5.lead-tag= blogss.leadtag
 
-                div.blog-det
-                  h3.blog-title
-                    a(href=blogss.permalink)= blogss.title
-                  .published
-                    i(class="fa fa-clock-o", aria-hidden="true")
-                    date= dateFormat(blogss.date, 'dddd, LL')
-                  .short-desc
-                    p= blogss.shortdesc
-                    p.read-more
-                      a(href=blogss.permalink)
-                        | Read More
-                        i.fa.fa-long-arrow-right(aria-hidden='true')
+                  div.blog-det
+                    h3.blog-title
+                      a(href=blogss.permalink)= blogss.title
+                    .published
+                      i(class="fa fa-clock-o", aria-hidden="true")
+                      date= dateFormat(blogss.date, 'dddd, LL')
+                    .short-desc
+                      p= blogss.shortdesc
+                      p.read-more
+                        a(href=blogss.permalink)
+                          | Read More
+                          i.fa.fa-long-arrow-right(aria-hidden='true')
 
 
-        div#more-blog.section
-          div.more-img
-            a.more-blog-btn.hvr-ripple-out(href="/blog-list.html")
-              img(src="img/blog/more-blog.png")
+          div#more-blog.section
+            div.more-img
+              a.more-blog-btn.hvr-ripple-out(href="/blog-list.html")
+                img(src="img/blog/more-blog.png")
 
-    section#maps
-      div#map
+      section#maps
+        div#map

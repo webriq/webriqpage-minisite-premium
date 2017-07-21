@@ -1,5 +1,9 @@
 @import '_settings'
 @import '_colorize'
+@import '_header'
+@import '_sidenav'
+@import '_services'
+@import '_footer'
 
 normalize-css()
 base()
@@ -7,6 +11,10 @@ base()
 body
   padding: 0px
   font-family: "Nunito", sans-serif
+  color $font-color
 
 header, .footer
   text-align:center
+
+a
+	color $primary-color

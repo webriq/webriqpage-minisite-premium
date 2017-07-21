@@ -20,10 +20,6 @@
     "roots-records": "^0.5.1",
     "rupture": "0.6.x",
     "sitemap-generator": "^4.1.1",
-    "sort-by": "^1.1.1",
-    "sort-object": "^3.0.2",
-    "sorty": "^1.2.2",
-    "stylus": "0.54.x",
-    "webriq-roots-rss-generator": "^2.0.0"
+    "stylus": "0.54.x"
   }
 }

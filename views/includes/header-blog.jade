@@ -1,0 +1,7 @@
+#sliderhead.blog-header(style="background: #111 url(../img/listblog-bg.jpg) fixed")
+	div.container.text-center
+		div.text-det
+			h2=entry.title
+			div.date-head
+				h6
+					!= "<i class='fa fa-bookmark-o'></i> <i>By</i> <b>" + entry.author + "</b> | <i class='fa fa-clock-o'></i> Created on <b> " + dateFormat(entry.date, 'LL') + "</b>"

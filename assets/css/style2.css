@@ -116,7 +116,10 @@ h2, h3, h4 {
 /*slider text*/
 #sliderhead {
   padding:180px 0px 60px;
-  background:url(../img/header-hendy-bg.jpg) 0 50% no-repeat fixed;
+  background-color: #333;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat  
 } 
 #sliderhead .text-det h2{
   font-size:48px;
@@ -172,10 +175,7 @@ h2, h3, h4 {
   left:0;
   right:0; 
 }
-#sliderhead .scrolldwn a  {
-  font-size:11px;
-  color: #00afff;
-}
+
 #sliderhead .booknw2 a:hover  {
   text-decoration:none !important;
   transition:.3s;

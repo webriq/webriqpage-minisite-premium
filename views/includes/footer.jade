@@ -1,44 +1,21 @@
 section#copyright
     div.container
         div.row
+            // Records site -> footer -> first
             div.col-md-6.behind.text-left
-                h4 Contact
-                p.det
-                    | "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                != records.site.footerdata[0].first
+
+            // Records site -> footer -> first
             div.col-md-3.quicklnks.text-left
-                h4 LOREM IPSUM
-                ul.lnks
-                    li
-                        p Mon - Fri
-                          span
-                            | 8:00 am - 6:00 pm
-                    li
-                        p Saturday
-                          span
-                            | 8:00 am - 6:00 pm
-                     li
-                        p Sunday
-                          span.closestat
-                            | Closed
+                != records.site.footerdata[0].second
 
-
+            // Records site -> footer -> first
             div.col-md-3.conts.text-left
-                h4 LOREM IPSUM
-                ul.cntdets
-                    li
-                        a(href="mailto:mail@hendry-training.co.uk")
-                            i.fa.fa-envelope-o(aria-hidden='true')
-                            | loremipsum@buzzin.today
-                    li
-                        a(href="tel:01698 842 735") 
-                            i.fa.fa-phone(aria-hidden='true')
-                            | 0123 456 789
-                    li
-                        a(href="tel:07960 325 514") 
-                            i.fa.fa-mobile(aria-hidden='true')
-                            | 0123 456 789
-            div.col-md-12.text-center
-                p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                != records.site.footerdata[0].third
+
+            // Records site -> sitedata -> footer
+            div.col-md-12
+                != records.site.sitedata[0].footer
 
 
     != js()

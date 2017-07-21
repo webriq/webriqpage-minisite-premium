@@ -1,71 +1,40 @@
-if _path == "/index.html"
+header.containerheader
+	nav.navbar.navbar-default.home
+		.container
+			// Brand and toggle get grouped for better mobile display
+			.col-md-6.col-sm-6.col-xs-6.text-left.menuleft
+				div.navigation-button
+					a(href="javascript:;" class="toggle buttontween" id="sidenav-toggle")
+						svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 294.843 294.843', width='54', height='54')
+							g(fill='#FFF')
+								path(d='M147.42 0C66.134 0 0 66.133 0 147.42c0 40.97 17.26 80.426 47.35 108.256 2.434 2.25 6.23 2.1 8.48-.33 2.25-2.435 2.102-6.23-.332-8.48C27.854 221.3 12 185.054 12 147.42 12 72.75 72.75 12 147.42 12s135.422 60.75 135.422 135.42-60.75 135.422-135.42 135.422c-3.314 0-6 2.687-6 6s2.686 6 6 6c81.288 0 147.42-66.133 147.42-147.42S228.71 0 147.422 0z')
+								path(d='M84.185 90.185h126.473c3.313 0 6-2.687 6-6s-2.687-6-6-6H84.185c-3.313 0-6 2.687-6 6s2.687 6 6 6zM84.185 153.42h126.473c3.313 0 6-2.686 6-6s-2.687-6-6-6H84.185c-3.313 0-6 2.688-6 6s2.687 6 6 6zM216.658 210.658c0-3.313-2.687-6-6-6H84.185c-3.313 0-6 2.687-6 6s2.687 6 6 6h126.473c3.313 0 6-2.687 6-6z')
 
-    header.containerheader
-        nav.navbar.navbar-default.home
-          .container
-            // Brand and toggle get grouped for better mobile display
-            .col-md-6.col-sm-6.col-xs-6.text-left.menuleft
-                div.btnrigt
-                 a(href="javascript:;" class="toggle buttontween" id="sidenav-toggle") MENU
+						| Buzzin Premium
 
-            .col-md-6.col-sm-6.col-xs-6.social-right
-              ul.social-header-topright
-               li
-                  a(href="https://www.facebook.com/BuzzinBrisbane" target="_blank") 
-                    i.fa.fa-facebook(aria-hidden='true')
-               li
-                  a(href="https://twitter.com/BuzzinBrisbane" target="_blank")
-                    i.fa.fa-twitter(aria-hidden='true')
-               li
-                  a(href="https://plus.google.com/106407925285870246194" target="_blank")
-                    i.fa.fa-google-plus(aria-hidden='true')
-                 
-        a.closebtn(href='javascript:void(0)' class="buttontween") ×
+			.col-md-6.col-sm-6.col-xs-6.social-right
+				ul.social-header-topright
+					each social in records.menu.social
+						li
+							a(href=social.url, class=social.class target="_blank") 
+								!= social.icon
 
-        nav#nav2.sidenav(data-sidenav='', data-sidenav-toggle='#sidenav-toggle')
-           
-           div.logonav
-            a(href="https://minisite-business.sites.webriqs.com/#page-top")
-              img(src="../img/hendy-training2.png")
-           ul.sidenav-menu
-             li
-                a(href="#page-top") Home
-             li
-                a(href="#health-and-safety") About Us
-             li
-                a(href="#services2") Web Services
-             li
-                a(href="#coursesoffer") Our Offers
-             li
-                a(href="#blogsec") Blog
-             li
-                a(href="#maps") Contact
-            div.credentials_nav
-               ul.social-sidebar-topright
-                 li
-                    a(href="https://www.facebook.com/BuzzinBrisbane" target="_blank") 
-                      i.fa.fa-facebook(aria-hidden='true')
-                 li
-                    a(href="https://twitter.com/BuzzinBrisbane" target="_blank")
-                      i.fa.fa-twitter(aria-hidden='true')
-                 li
-                    a(href="https://plus.google.com/106407925285870246194" target="_blank")
-                      i.fa.fa-google-plus(aria-hidden='true')
-               p.resrv © 2017 by Buzzin
+	a.closebtn(href='javascript:void(0)' class="buttontween") ×
 
+	nav#nav2.sidenav(data-sidenav='', data-sidenav-toggle='#sidenav-toggle')
+		div.logonav
+			a(href="/#page-top")
+				img(src= records.site.sitedata[0].logo)
+		ul.sidenav-menu
+			each navi in records.menu.navigation
+				li(class=navi.class)
+					a(href=navi.url, alt=navi.alt, target="_blank")= navi.item						
 
-    #sliderhead.home
-        div.container.text-center
-            div.text-det
-                h2 
-                  span L
-                  | orem Ipsum is simply dummy text of the printing and typesetting industry.
-                h4 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+		div.credentials_nav
+			ul.social-sidebar-topright
+				each social in records.menu.social
+					li
+						a(href=social.url, class=social.class target="_blank") 
+							!= social.icon
 
-            p.booknw2
-                a.booknw.hvr-ripple-out(href="#maps") CONTACT NOW
-
-
-            p.scrolldwn
-                a(href="#aboutdailmore") SCROLL FOR MORE
-                    i.fa.fa-long-arrow-down(aria-hidden='true')
+			p.resrv © 2017 by WebriQ Services
