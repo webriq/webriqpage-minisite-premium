@@ -39,6 +39,25 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Campany Address", name: "company_address", widget: "string"}
               - {label: "Company Website", name: "website", widget: "string"}
 
+          - label: "Navigation List"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - {label: "Item Name", name: "item", widget: "string"}
+              - {label: "Url", name: "url", widget: "string"}
+              - {label: "Alt text", name: "alt", widget: "string"}
+              - {label: "Custom class", name: "class", widget: "string"}
+
+          - label: "Social Media"
+            name: "social"
+            widget: "list"
+            fields:
+              - {label: "Item Name", name: "item", widget: "string"}
+              - {label: "Url", name: "url", widget: "string"}
+              - {label: "Alt text", name: "alt", widget: "string"}
+              - {label: "Custom class", name: "class", widget: "string"}
+              - {label: "Add icon", name: "icon", widget: "markdown"}
+
           - label: "Services - Section"
             name: "services"
             widget: "list"
@@ -71,29 +90,17 @@ collections: # A list of collections the CMS should be able to edit
     meta: # Meta data fields. Just like fields, but without any preview element
       - {label: "Date", name: "date", widget: "date"}
 
-  # Navigation
-  - name: "navigation"
-    label: "Main navigation & social link"
+  - name: "filemanager"
+    label: "File Manager"
     files:
-      - name: "navigation"
-        label: "Main navigation & social link"
-        file: "data/menu.json"
-        description: "Add Main navigation & social link entries here"
+      - name: "filemanager"
+        label: "File Manager"
+        file: "data/files.json"
+        description: "Add file(image,doc,pdf) here"
         fields:
-          - label: "Navigation List"
-            name: "navigation"
+          - label: "File Manager"
+            name: "filemanager"
             widget: "list"
             fields:
-              - {label: "Item Name", name: "item", widget: "string"}
-              - {label: "Url", name: "url", widget: "string"}
-              - {label: "Alt text", name: "alt", widget: "string"}
-              - {label: "Custom class", name: "class", widget: "string"}
-          - label: "Social Media"
-            name: "social"
-            widget: "list"
-            fields:
-              - {label: "Item Name", name: "item", widget: "string"}
-              - {label: "Url", name: "url", widget: "string"}
-              - {label: "Alt text", name: "alt", widget: "string"}
-              - {label: "Custom class", name: "class", widget: "string"}
-              - {label: "Add icon", name: "icon", widget: "markdown"}
+              - {label: "File Name", name: "name", widget: "string"}
+              - {label: "File Type", name: "file", widget: "image", media_folder: "assets/files"}

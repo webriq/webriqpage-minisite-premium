@@ -14,7 +14,61 @@
       "googlemapapi": "AIzaSyA6YZAvU4Y_W5tXV9dbyEokeKjN1dpUM5w",
       "company_address": "london, uk",
       "website": "http://webriq.services"
-
+    }
+  ],
+  "navigation": [
+    {
+      "item": "Home",
+      "url": "/",
+      "class": "link",
+      "alt": "Home"
+    },
+    {
+      "item": "About",
+      "url": "#",
+      "class": "link hidden",
+      "alt": "About Us"
+    },
+    {
+      "item": "Services",
+      "url": "#services2",
+      "class": "link",
+      "alt": "Our Services"
+    },
+    {
+      "item": "Blog",
+      "url": "#",
+      "class": "link hidden",
+      "alt": "Blog updates"
+    },
+    {
+      "item": "Contact",
+      "url": "#copyright",
+      "class": "link",
+      "alt": "Contact Us"
+    }
+  ],
+  "social": [
+    {
+      "item": "Facebook",
+      "url": "https://www.facebook.com/",
+      "class": "social-link",
+      "alt": "Facebook Link",
+      "icon": "<i class='fa fa-facebook' aria-hidden='true'></i>"
+    },
+    {
+      "item": "Twitter",
+      "url": "https://www.twitter.com/",
+      "class": "social-link",
+      "alt": "Twitter Link",
+      "icon": "<i class='fa fa-twitter' aria-hidden='true'></i>"
+    },
+    {
+      "item": "Google Plus",
+      "url": "https://plus.google.com/",
+      "class": "social-link",
+      "alt": "Google Plus Link",
+      "icon": "<i class='fa fa-google-plus' aria-hidden='true'></i>"
     }
   ],
   "services": [

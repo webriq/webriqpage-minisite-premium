@@ -30,8 +30,7 @@ module.exports =
         ]).reverse()
 
   extensions: [
-    records(
-      menu: { file: "data/menu.json" }
+    records(      
       site: { file: "data/site.json" }
       files: { file: "data/files.json" }      
     ),

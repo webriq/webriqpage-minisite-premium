@@ -14,7 +14,7 @@ header.containerheader
 
 			.col-md-6.col-sm-6.col-xs-6.hidden-xs.social-right
 				ul.social-header-topright
-					each social in records.menu.social
+					each social in records.site.social
 						li
 							a(href=social.url, class=social.class target="_blank") 
 								!= social.icon
@@ -26,15 +26,16 @@ header.containerheader
 			a(href="/#page-top")
 				img(src= records.site.sitedata[0].logo)
 		ul.sidenav-menu
-			each navi in records.menu.navigation
+			each navi in records.site.navigation
 				li(class=navi.class)
 					a(href=navi.url, alt=navi.alt, target="_blank")= navi.item						
 
 		div.credentials_nav
 			ul.social-sidebar-topright
-				each social in records.menu.social
+				each social in records.site.social
 					li
 						a(href=social.url, class=social.class target="_blank") 
 							!= social.icon
 
-			p.resrv © 2017 by WebriQ Services
+			p.resrv
+				!= records.site.sitedata[0].footer
