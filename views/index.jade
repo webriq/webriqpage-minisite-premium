@@ -19,36 +19,38 @@ block content
                     .entry_body
                       p= services.body
 
-      if config.blog != "hide"
-        div#blogsec.section
-          div.container.text-center
-            h1.title-header Blog
-            h5.sub Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            hr
-            .container.news-item
-              each blogss in sortByKey(blog)
-                div.col-md-4.text-center
-                  .news-items
-                    div.lead-sec
-                      .lead-image
-                        img.img-responsive(src=blogss.mainimage)
-                      h5.lead-tag= blogss.leadtag
+    if config.blog != "hide"
+      div#blogsec.section
+        div.container.text-center
+          h1.title-header Blog
+          h5.sub Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          hr
+          .container.news-item
+            each blogss in sortByKey(blog)
+              div.col-md-4.text-center
+                .news-items
+                  div.lead-sec
+                    .lead-image
+                      img.img-responsive(src=blogss.mainimage)
+                    h5.lead-tag= blogss.leadtag
 
-                    div.blog-det
-                      h3.blog-title
-                        a(href=blogss.permalink)= blogss.title
-                      .published
-                        i(class="fa fa-clock-o", aria-hidden="true")
-                        date= dateFormat(blogss.date, 'dddd, LL')
-                      .short-desc
-                        p= blogss.shortdesc
-                        p.read-more
-                          a(href=blogss.permalink)
-                            | Read More
-                            i.fa.fa-long-arrow-right(aria-hidden='true')
+                  div.blog-det
+                    h3.blog-title
+                      a(href=blogss.permalink)= blogss.title
+                    .published
+                      i(class="fa fa-clock-o", aria-hidden="true")
+                      date= dateFormat(blogss.date, 'dddd, LL')
+                    .short-desc
+                      p= blogss.shortdesc
+                      p.read-more
+                        a(href=blogss.permalink)
+                          | Read More
+                          i.fa.fa-long-arrow-right(aria-hidden='true')
 
 
-            div#more-blog.section
-              div.more-img
-                a.more-blog-btn.hvr-ripple-out(href="/blog-list.html")
-                  img(src="img/blog/more-blog.png")
+          div#more-blog.section
+            div.more-img
+              a.more-blog-btn.hvr-ripple-out(href="/blog-list.html")
+                img(src="img/blog/more-blog.png")
+
+    #map

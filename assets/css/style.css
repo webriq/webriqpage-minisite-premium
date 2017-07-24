@@ -464,7 +464,7 @@ h2, h3, h4 {
 
 /*footer*/
 #copyright {
-  background: #181818 url(../img/footer-bg.png)no-repeat bottom;
+  background: #181818;
   padding:40px 0px 0px;
 }
 #copyright .container {

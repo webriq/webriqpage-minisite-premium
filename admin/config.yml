@@ -35,6 +35,9 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Google Analytics", name: "analytics", widget: "markdown"}
               - {label: "Services title", name: "services_title", widget: "string"}
               - {label: "Services subheading", name: "services_subheading", widget: "string"}
+              - {label: "Google Map API", name: "googlemapapi", widget: "string"}
+              - {label: "Campany Address", name: "company_address", widget: "string"}
+              - {label: "Company Website", name: "website", widget: "string"}
 
           - label: "Services - Section"
             name: "services"
