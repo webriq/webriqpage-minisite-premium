@@ -2,7 +2,7 @@ header.containerheader
 	nav.navbar.navbar-default.home
 		.container
 			// Brand and toggle get grouped for better mobile display
-			.col-md-6.col-sm-6.col-xs-6.text-left.menuleft
+			.col-md-6.col-sm-6.col-xs-12.text-left.menuleft
 				div.navigation-button
 					a(href="javascript:;" class="toggle buttontween" id="sidenav-toggle")
 						svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 294.843 294.843', width='54', height='54')
@@ -12,7 +12,7 @@ header.containerheader
 
 						| Buzzin Premium
 
-			.col-md-6.col-sm-6.col-xs-6.social-right
+			.col-md-6.col-sm-6.col-xs-6.hidden-xs.social-right
 				ul.social-header-topright
 					each social in records.menu.social
 						li
